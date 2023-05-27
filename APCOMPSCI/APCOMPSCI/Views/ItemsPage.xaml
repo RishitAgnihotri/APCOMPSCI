@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APCOMPSCI.Views.ItemsPage"
+             Title="Your List"
+             xmlns:local="clr-namespace:APCOMPSCI.ViewModels"  
+             xmlns:model="clr-namespace:APCOMPSCI.Models"  
+             x:Name="BrowseItemsPage"
+             BackgroundColor="#112B47">
+
+
+    <ContentPage.BindingContext>
+        <local:ItemsViewModel/>
+    </ContentPage.BindingContext>
+
+    <!--
+      x:DataType enables compiled bindings for better performance and compile time validation of binding expressions.
+      https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/data-binding/compiled-bindings
+    -->
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid MinimumHeightRequest="200">
+                <Entry Placeholder="Item(s):" PlaceholderColor="White" Text="{Binding ItemName}" HorizontalOptions="Start" WidthRequest="90" TextColor="White"/>
+                <Entry Placeholder="Description:" PlaceholderColor="White" Text="{Binding ItemDescription}" HorizontalOptions="Center" WidthRequest="120" TextColor="White"/>
+                <Entry Placeholder="Amount:" PlaceholderColor="White" Text="{Binding ItemAmount}" HorizontalOptions="End" TextColor="White" WidthRequest="90"/>
+            </Grid>
+            <Button Text="Add" Command="{Binding AddItemCommand}" Margin="10" CornerRadius="35" BackgroundColor="ForestGreen" BorderColor="LightGreen" TextColor="White"/>
+            <Button Text="Remove" Command="{Binding RemoveItemCommand}" Margin="10" CornerRadius="35" BackgroundColor="ForestGreen" BorderColor="LightGreen"/>
+            <Image x:Name="resultPhoto"/>
+            <ListView x:Name="MyList" ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" Margin="15">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Label Text="{Binding ItemName}" Grid.Column="0" VerticalTextAlignment="Start" FontAttributes="Bold" FontSize="Medium" TextColor="White"/>
+                                <Label Text="{Binding Description}" Grid.Column="0" VerticalTextAlignment="End" FontAttributes="Italic" TextColor="White"/>
+                                <Label Text="{Binding Amount}" Grid.Column="0" VerticalTextAlignment="End" HorizontalTextAlignment="End" FontSize="Large" TextColor="White"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+           
+            <Button x:Name="btnOpenCamera" Text="Open Camera" Clicked="BtnTakePhoto_Clicked"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

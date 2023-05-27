@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APCOMPSCI.Views.NewItemPage"
+             Shell.PresentationMode="ModalAnimated"
+             Title="Recycling Centers"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true">
+
+    <ContentPage.Content>
+        <StackLayout Spacing="05" Padding="10">
+            <Frame BorderColor="Black" BackgroundColor="White" HeightRequest="1200">
+                <Grid>
+                    <Button Text="DOS PALOS RECYCLING" FontAttributes="Bold,Italic" TextColor="Black" Clicked="Dos_Button" BackgroundColor="LawnGreen" BorderColor="DarkOliveGreen" BorderWidth="2" CornerRadius="90" ClassId="https://www.facebook.com/people/Dos-Palos-Recycling/100063632405226/"/>
+                    <Label Text="Address: 1565 Olivina Ave, Livermore, CA 94551" TextColor="Black" Grid.Row="1"/>
+                    <Label Text="Prices: Varies by CRV Value" TextColor="Black" Grid.Row="2"/>
+                    <Label Text="NOTES: Only takes cans/bottles" TextColor="Black" Grid.Row="3"/>
+                </Grid>
+            </Frame>
+            <Frame BorderColor="Black" BackgroundColor="White" HeightRequest="950">
+                <Grid>
+                    <Button Text="REFUND RECYCLING CENTERS" FontAttributes="Bold,Italic" TextColor="Black" Clicked="Dos_Button" BackgroundColor="LawnGreen" BorderColor="DarkOliveGreen" BorderWidth="2" Padding="05" CornerRadius="90" ClassId="https://livermorerecycles.org/"/>
+                    <Label Text="Address: 2680 Old First St, Livermore, CA 94550" TextColor="Black" Grid.Row="1"/>
+                    <Label Text="$: Varies by weight and price (MORE ON WEBSITE)" TextColor="Black" Grid.Row="2"/>
+                    <Label Text="NOTES: Can Take Electronics, Cardboard, etc..." TextColor="Black" Grid.Row="3"/>
+                </Grid>
+            </Frame>
+            <Frame BorderColor="Black" BackgroundColor="White" HeightRequest="850">
+                <Grid>
+                    <Button Text="Tri-CED Community Recycling" FontAttributes="Bold,Italic" TextColor="Black" Clicked="Dos_Button" BackgroundColor="LawnGreen" BorderColor="DarkOliveGreen" BorderWidth="2" Padding="05" CornerRadius="90" ClassId="https://www.tri-ced.org/"/>
+                    <Label Text="Address: 33377 Western Ave, Union City, CA 94587" TextColor="Black" Grid.Row="1"/>
+                    <Label Text="Prices: Amount and price of objects" TextColor="Black" Grid.Row="2"/>
+                    <Label Text="NOTES: NO RESIDUE/CHEMICAL MATERIALS" TextColor="Black" Grid.Row="3"/>
+                </Grid>
+            </Frame>
+            <Frame BorderColor="Black" BackgroundColor="White" HeightRequest="900">
+                <Grid>
+                    <Button Text="Livermore E-Waste Recycling Company" FontAttributes="Bold,Italic" TextColor="Black" Clicked="Dos_Button" BackgroundColor="LawnGreen" BorderColor="DarkOliveGreen" BorderWidth="2" Padding="05" CornerRadius="90" ClassId="https://livermoreewaste.com/"/>
+                    <Label Text="Main Address: 5625 Brisa St A, Livermore, CA 94550" TextColor="Black" Grid.Row="1"/>
+                    <Label Text="At-Location Service: Price Varies" TextColor="Black" Grid.Row="2"/>
+                    <Label Text="NOTES:Only Electronic Devices" TextColor="Black" Grid.Row="3"/>
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>

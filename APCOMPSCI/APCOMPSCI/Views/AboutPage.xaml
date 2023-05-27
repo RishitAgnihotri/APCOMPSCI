@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APCOMPSCI.Views.AboutPage" 
+             xmlns:vm="clr-namespace:APCOMPSCI.ViewModels"
+             Title="Home Page"
+             NavigationPage.HasNavigationBar="True"
+             BackgroundColor="#112B47"
+             >
+
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout BackgroundColor="Green">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView VerticalOptions="FillAndExpand">
+                    <Frame HeightRequest="160" WidthRequest="470" 
+                          BackgroundColor="White" Padding="0"
+                           HasShadow="True" HorizontalOptions="CenterAndExpand">
+                        <Grid>
+                            <StackLayout BackgroundColor="Black">
+                                <Image Source="https://www.westernslopenow.com/wp-content/uploads/sites/95/2021/05/GlobalRecyclingDay-2019.jpg" Aspect="AspectFill" Opacity="0.4"/>
+                            </StackLayout>
+                            <StackLayout>
+                                <Label Text="iRecycle" TextColor="White" FontSize="50" FontAttributes="Bold" Margin="15" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+                                <BoxView Color="Black" WidthRequest="2" HeightRequest="1"/>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="0">
+                <Frame HeightRequest="400" WidthRequest="540"
+                       BackgroundColor="White" Padding="0"
+                       HasShadow="True" HorizontalOptions="CenterAndExpand">
+                    <Grid>
+                        <StackLayout Background="Black" VerticalOptions="Start" WidthRequest="600">
+                            <Image Source="https://thumbs.dreamstime.com/b/go-green-design-vector-illustration-eps-58706300.jpg" Aspect="AspectFill" Opacity="0.4" HeightRequest="500" VerticalOptions="Start"></Image>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="Start Recycling Today&#x0a;With iRecycle!&#x0a;" FontSize="Large" FontAttributes="Bold,Italic" Margin="15" TextColor="White" VerticalTextAlignment="End" HorizontalTextAlignment="Center"/>
+                            <Label Text="iRecycle is an app dedicated to helping out the local community reach better recycling goals by providing you with the information your need!" Margin="15" FontSize="16" Padding="0,0,0,0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" FontAttributes="Bold"/>
+                            <Label Text="Using AI to help organize your items, the app allows you to create a list of objects you can take to the reycling centers and provides users with a list of centers near by!" Margin="15" FontSize="16" Padding="0,0,0,0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" FontAttributes="Bold"/>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+                <Frame HeightRequest="350" WidthRequest="540" Padding="30,24,20,24" HasShadow="True" Background="white" HorizontalOptions="Center">
+                    <Grid>
+                        <StackLayout>
+                            <Image Source="https://trivalleyconnect.org/wp-content/uploads/2019/06/pleasanton-008.jpg" Aspect="AspectFill" Opacity="0.9" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Image>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="Learn more at:"/>
+                            <Label Text="https://www.cityofpleasantoncs.gov/recycling/buyback.asp" FontAttributes="Bold"></Label>
+                        </StackLayout>
+                        <Button Margin="0,0,0,0" Text="Search more"
+                        Command="{Binding OpenWebCommand}"
+                        BackgroundColor="LightGreen" CornerRadius="30" VerticalOptions="End"
+                        TextColor="White" />
+                    </Grid>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+
+</ContentPage>
